@@ -1,5 +1,3 @@
-import getSumOfHoods from './3-default-parameter.js';
+import getBudgetObject from './7-getBudgetObject.js';
 
-console.log(getSumOfHoods(34));
-console.log(getSumOfHoods(34, 3));
-console.log(getSumOfHoods(34, 3, 4));
+console.log(getBudgetObject(400, 700, 900));
