@@ -1,30 +1,26 @@
-export default function createIteratorObject(report) { 
-    return {
-        [Symbol.iterator]() {
-            const departments = report['allEmployees'];
-            let combined_employees = [];
-            for (const key of Object.keys(departments)) {
-                combined_employees =[...combined_employees, ...departments[key]]
-            }
-            const total_employess =combined_employees.length;
-            let start = 0;
+export default function createIteratorObject (report) {
+  return {
+    [Symbol.iterator] () {
+      const departments = report.allEmployees;
+      let Combinedemployees = [];
+      for (const key of Object.keys(departments)) {
+        Combinedemployees = [...Combinedemployees, ...departments[key]];
+      }
+      const Totalemployess = Combinedemployees.length;
+      let start = 0;
+      return {
+        next () {
+          if (start < Totalemployess) {
             return {
-                next() {
-                    if (start < total_employess) {
-                        return {
-                            done:false, value: combined_employees[start++],
-                        }                   
-                }
-                else {
-                    return {
-                        done:true,
-                    }
-                }
-            }
+              done: false, value: Combinedemployees[start++]
+            };
+          } else {
+            return {
+              done: true
+            };
+          }
         }
+      };
     }
+  };
 }
-}
-
-
-
