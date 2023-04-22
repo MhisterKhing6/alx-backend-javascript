@@ -1,13 +1,9 @@
-export default function handleResponseFromAPI(promise) {
+export default function handleResponseFromAPI (promise) {
+  let endValue = null;
   promise.then((response) => {
-    return {
-
-      status: 200,
-      body: 'success'
-
-    };
-  }, (reject) => {
-    return new Error();
+    console.log('I was successful');
+    endValue = 'love';
+    return true;
   });
-  console.log('Got a response from the API');
+  return endValue;
 }
