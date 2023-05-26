@@ -1,6 +1,7 @@
 import handleResponseFromAPI from "./2-then";
 
 const promise = Promise.resolve();
-handleResponseFromAPI(promise);
+let v = handleResponseFromAPI(promise);
 
+console.log(v.resolves())
 
