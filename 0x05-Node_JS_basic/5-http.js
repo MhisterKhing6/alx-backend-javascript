@@ -33,7 +33,7 @@ const app = http.createServer((req, res) => {
   res.statusCode = 200;
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   if (req.url === '/students') {
-    res.end(`This is the list of our ${process.argv[2]} students\n${countstudents(process.argv[2])}`);
+    res.end(`This is the list of our students\n${countstudents(process.argv[2])}`);
   } else {
     res.end('Just trying');
   }
